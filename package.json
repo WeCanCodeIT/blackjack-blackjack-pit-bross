@@ -1,0 +1,30 @@
+{
+  "name": "js-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.html",
+    "test": "jest --colors --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WeCanCodeIT/js-frontend.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/WeCanCodeIT/js-frontend/issues"
+  },
+  "homepage": "https://github.com/WeCanCodeIT/js-frontend#readme",
+  "description": "",
+  "dependencies": {
+    "blackjack-dealer-logic": "^1.1.4"
+  }
+}
