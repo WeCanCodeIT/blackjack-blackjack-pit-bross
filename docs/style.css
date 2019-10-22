@@ -44,12 +44,22 @@
     grid-area: result;
 }
 
-.table{
+.play-area{
+    grid-area: play-area;
     background-color: var(--green);
     height: 20rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.table-dealer{
+    height: 10rem;
+}
+.table-user{
+    height: 10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .value-container{
@@ -65,5 +75,5 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
-    grid-template-areas: "header header header" "command table result" "footer footer footer";
+    grid-template-areas: "header header header" "command play-area result" "footer footer footer";
 }

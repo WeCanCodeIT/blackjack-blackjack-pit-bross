@@ -7,12 +7,24 @@ singleDeckGame.deal();
 const userHand = singleDeckGame.getUserHand();
 const dealerHand = singleDeckGame.getDealerHand();
 
-generateCard(userHand.getCards()[0]);
-generateCard(userHand.getCards()[1]);
-generateCard(dealerHand.getCardUp());
+generateCardUser(userHand.getCards()[0]);
+generateCardUser(userHand.getCards()[1]);
+generateCardDealer(dealerHand.getFirstCard());
 
+// function buildDealerCard(string){
+//   const dealerCard = document.createElement("section");
+//   dealerCard.classList.add("dealer-card");
 
-function generateCard(card) {
+//   const dealerContainer = document.createElement("section");
+//     dealerContainer.classList.add("dealer-container");
+
+//   const dealerValue = document.createElement("span");
+//     dealerValue.classList.add("dealerValue");
+//     dealerValue.textContent = string.
+  
+// }
+
+function generateCardDealer(card) {
   const playingCard = document.createElement("section");
   playingCard.classList.add("playing-card");
 
@@ -31,6 +43,29 @@ function generateCard(card) {
   valueContainer.append(suit);
   playingCard.append(valueContainer);
 
-  const table = document.querySelector(".table");
+  const table = document.querySelector(".table-dealer");
+  table.append(playingCard);
+}
+
+function generateCardUser(card) {
+  const playingCard = document.createElement("section");
+  playingCard.classList.add("playing-card");
+
+  const valueContainer = document.createElement("section");
+  valueContainer.classList.add("value-container");
+
+  const value = document.createElement("span");
+  value.classList.add("value");
+  value.textContent = card.getValue();
+
+  const suit = document.createElement("span");
+  suit.classList.add("suit");
+  suit.textContent = card.getSuit();
+
+  valueContainer.append(value);
+  valueContainer.append(suit);
+  playingCard.append(valueContainer);
+
+  const table = document.querySelector(".table-user");
   table.append(playingCard);
 }
