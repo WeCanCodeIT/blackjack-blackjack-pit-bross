@@ -1,6 +1,24 @@
-.newParagraph {
-    background-color: green;;
+.command{
+    display: grid;
+    grid-area: command;
 }
-.redBackground {
-    background-color: red;
+.footer{
+    display: grid;
+    grid-area: footer;
+    grid-column:span 3;
+}
+.header{
+    display: grid;
+    grid-area: header;
+    grid-column: span 3;
+}
+.result {
+    display: grid;
+    grid-area: result;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header" "command dealer result" "command user result" "footer footer footer";
 }
