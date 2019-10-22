@@ -1,6 +1,55 @@
-.newParagraph {
-    background-color: green;;
+html{
+    font: 20px/1 sans-serif;
 }
-.redBackground {
-    background-color: red;
+
+.command{
+    display: grid;
+    grid-area: command;
 }
+.footer{
+    display: grid;
+    grid-area: footer;
+    grid-column:span 3;
+}
+.header{
+    display: grid;
+    grid-area: header;
+    grid-column: span 3;
+}
+.result {
+    display: grid;
+    grid-area: result;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header" "command dealer result" "command user result" "footer footer footer";
+}
+
+
+
+
+/* 
+.table{
+    background-color: green;
+    height: 20rem;
+}
+
+.playing-card{
+    display: flex;
+    border-radius: 0.5rem;
+    background-color: azure;
+    padding: 1rem;
+    height: 8rem;
+    width: 6rem;
+}
+
+.value-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
+    padding: 1rem;
+    width: 100%;
+} */
