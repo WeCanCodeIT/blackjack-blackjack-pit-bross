@@ -5,11 +5,12 @@ const {
 singleDeckGame.deal();
 
 const userHand = singleDeckGame.getUserHand();
+const dealerHand = singleDeckGame.getDealerHand();
 
 generateCard(userHand.getCards()[0]);
 generateCard(userHand.getCards()[1]);
-generateCard(dealerHand.getCards()[0]);
-generateCard(dealerHand.getCards()[1]);
+generateCard(dealerHand.getCardUp());
+
 
 function generateCard(card) {
   const playingCard = document.createElement("section");
