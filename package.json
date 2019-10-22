@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "/src/index.html",
+    "start": "webpack-dev-server --mode development --content-base docs/ --open --hot",
     "test": "jest --colors --watchAll"
   },
   "author": "",
