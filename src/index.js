@@ -5,7 +5,7 @@ const {
 singleDeckGame.deal();
 
 const userHand = singleDeckGame.getUserHand();
-const dealerHand = singleDeckGame.getDealerHand();
+const dealerHand = singleDeckGame.dealer.getHand();
 
 generateCardUser(userHand.getCards()[0]);
 generateCardUser(userHand.getCards()[1]);

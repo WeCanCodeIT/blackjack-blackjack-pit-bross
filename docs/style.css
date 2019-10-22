@@ -52,8 +52,16 @@
     align-items: center;
     justify-content: center;
 }
+.play-area__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .table-dealer{
     height: 10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .table-user{
     height: 10rem;
