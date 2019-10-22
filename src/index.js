@@ -8,6 +8,8 @@ const userHand = singleDeckGame.getUserHand();
 
 generateCard(userHand.getCards()[0]);
 generateCard(userHand.getCards()[1]);
+generateCard(dealerHand.getCards()[0]);
+generateCard(dealerHand.getCards()[1]);
 
 function generateCard(card) {
   const playingCard = document.createElement("section");
