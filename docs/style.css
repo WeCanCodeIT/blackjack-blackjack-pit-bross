@@ -52,23 +52,6 @@
     align-items: center;
     justify-content: center;
 }
-.play-area__container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.table-dealer{
-    height: 10rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.table-user{
-    height: 10rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 
 .value-container{
     display: flex;
@@ -84,4 +67,13 @@
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(3, auto);
     grid-template-areas: "header header header" "command play-area result" "footer footer footer";
+}
+
+
+
+
+.hit{
+    padding: .5rem, 1 rem;
+    background-color: transparent;
+    border: 2px solid var(--red);
 }

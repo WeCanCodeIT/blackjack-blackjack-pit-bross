@@ -1,71 +1,21 @@
 const {
   default: { singleDeckGame }
 } = require("blackjack-dealer-logic");
+const Dom = require("./utils/Dom");
 
 singleDeckGame.deal();
 
+const dealerHand = singleDeckGame.getDealerHand();
 const userHand = singleDeckGame.getUserHand();
-const dealerHand = singleDeckGame.dealer.getHand();
 
-generateCardUser(userHand.getCards()[0]);
-generateCardUser(userHand.getCards()[1]);
-generateCardDealer(dealerHand.getFirstCard());
+Dom.renderCards(dealerHand.getCards(), document.querySelector(".dealer"));
+Dom.renderCards(userHand.getCards(), document.querySelector(".user"));
 
-// function buildDealerCard(string){
-//   const dealerCard = document.createElement("section");
-//   dealerCard.classList.add("dealer-card");
+//button stuff
+const hitButton = document.querySelector(".hit");
 
-//   const dealerContainer = document.createElement("section");
-//     dealerContainer.classList.add("dealer-container");
-
-//   const dealerValue = document.createElement("span");
-//     dealerValue.classList.add("dealerValue");
-//     dealerValue.textContent = string.
-  
-// }
-
-function generateCardDealer(card) {
-  const playingCard = document.createElement("section");
-  playingCard.classList.add("playing-card");
-
-  const valueContainer = document.createElement("section");
-  valueContainer.classList.add("value-container");
-
-  const value = document.createElement("span");
-  value.classList.add("value");
-  value.textContent = card.getValue();
-
-  const suit = document.createElement("span");
-  suit.classList.add("suit");
-  suit.textContent = card.getSuit();
-
-  valueContainer.append(value);
-  valueContainer.append(suit);
-  playingCard.append(valueContainer);
-
-  const table = document.querySelector(".table-dealer");
-  table.append(playingCard);
-}
-
-function generateCardUser(card) {
-  const playingCard = document.createElement("section");
-  playingCard.classList.add("playing-card");
-
-  const valueContainer = document.createElement("section");
-  valueContainer.classList.add("value-container");
-
-  const value = document.createElement("span");
-  value.classList.add("value");
-  value.textContent = card.getValue();
-
-  const suit = document.createElement("span");
-  suit.classList.add("suit");
-  suit.textContent = card.getSuit();
-
-  valueContainer.append(value);
-  valueContainer.append(suit);
-  playingCard.append(valueContainer);
-
-  const table = document.querySelector(".table-user");
-  table.append(playingCard);
-}
+hitButton.addEventListener("click", () => {
+  singleDeckGame.hitUser();
+  document.querySelector(".user").innerHTML = ""; //clears the exising cards
+  Dom.renderCards(singleDeckGame.getUserHand().getCards(), document.querySelector(".user"));
+});
