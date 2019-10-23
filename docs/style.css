@@ -19,15 +19,21 @@
     grid-area: command;
 }
 .footer{
-    display: grid;
+    display: flex;
+    justify-content: space-around;
     grid-area: footer;
     grid-column:span 3;
+    padding: 2rem;
+    align-items: center;
 }
+
 .header{
     display: grid;
     grid-area: header;
     grid-column: span 3;
 }
+
+
 
 .playing-card{
     display: flex;
@@ -44,11 +50,12 @@
     grid-area: result;
 }
 
-.play-area{
-    grid-area: play-area;
+.table{
+    grid-area: table-Dealer, table-User;
     background-color: var(--green);
     height: 20rem;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -65,15 +72,22 @@
 .wrapper {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: "header header header" "command play-area result" "footer footer footer";
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header" "command table-dealer result" "command table-user result" "footer footer footer";
 }
 
 
 
 
-.hit{
-    padding: .5rem, 1 rem;
+button{
+    padding: 1rem;
     background-color: transparent;
+    border-radius: 20px;
     border: 2px solid var(--red);
+    font-size: 1.5rem;
+    width: fit-content;  
+}
+
+button:hover {
+    background-color: yellow;
 }
