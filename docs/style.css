@@ -38,7 +38,9 @@
     padding: 2rem;
 }
 
-
+.dealButton {
+    padding: 6px 4px 6px 10px;
+}
 
 .playing-card{
     display: flex;
@@ -51,8 +53,11 @@
 }
 
 .result {
-    display: grid;
+    display: flex;
     grid-area: result;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .table{
@@ -78,7 +83,7 @@
     display: grid;
     background-image: url("Wood-Grain-2.jpg");
     background-size: cover;
-    grid-template-columns: 15% 60%;
+    grid-template-columns: 15% 60% 15%;
     grid-template-rows: repeat(4, auto);
     grid-template-areas: "header header header" "command table-dealer result" "command table-user result" "footer footer footer";
 }
