@@ -1,10 +1,10 @@
 const {
   default: { singleDeckGame }
 } = require("blackjack-dealer-logic");
-const Dom = require("./utils/Dom");
 
 singleDeckGame.deal();
 
+const Dom = require("./utils/Dom");
 const dealerHand = singleDeckGame.getDealerHand();
 const userHand = singleDeckGame.getUserHand();
 
@@ -19,3 +19,10 @@ hitButton.addEventListener("click", () => {
   document.querySelector(".user").innerHTML = ""; //clears the exising cards
   Dom.renderCards(singleDeckGame.getUserHand().getCards(), document.querySelector(".user"));
 });
+
+const dealButton = document.querySelector(".dealButton");
+dealButton.addEventListener("click", ()=> {
+  console.log("deal button clicked");
+  singleDeckGame.deal();
+}
+);

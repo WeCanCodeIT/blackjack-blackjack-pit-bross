@@ -17,20 +17,25 @@
 .command{
     display: grid;
     grid-area: command;
+    padding: 1rem;
 }
 .footer{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     grid-area: footer;
     grid-column:span 3;
-    padding: 2rem;
     align-items: center;
+    padding: 1rem;
 }
 
 .header{
     display: grid;
+    justify-content: center;
+    color:black;
+    font-size: 2rem;
     grid-area: header;
     grid-column: span 3;
+    padding: 2rem;
 }
 
 
@@ -71,7 +76,9 @@
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    background-image: url("Wood-Grain-2.jpg");
+    background-size: cover;
+    grid-template-columns: 15% 60%;
     grid-template-rows: repeat(4, auto);
     grid-template-areas: "header header header" "command table-dealer result" "command table-user result" "footer footer footer";
 }
