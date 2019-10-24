@@ -1,5 +1,5 @@
 const {
-  default: { singleDeckGame }
+  default: { singleDeckGame, Result }
 } = require("blackjack-dealer-logic");
 
 singleDeckGame.deal();
@@ -21,8 +21,20 @@ hitButton.addEventListener("click", () => {
 });
 
 const dealButton = document.querySelector(".dealButton");
-dealButton.addEventListener("click", ()=> {
+dealButton.addEventListener("click", () => {
   console.log("deal button clicked");
   singleDeckGame.deal();
-}
-);
+});
+
+
+
+//stand
+Dom.addClickEventToButton(".btn--stand", () => {
+  Dom.standEvent(singleDeckGame);
+});
+
+
+/*wrapping this method call in an anonymous method delays it's call*/
+/*anonymous function becomes a parameter to the event listener*/
+
+
