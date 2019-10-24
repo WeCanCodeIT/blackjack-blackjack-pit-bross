@@ -20,9 +20,13 @@ hitButton.addEventListener("click", () => {
   Dom.renderCards(singleDeckGame.getUserHand().getCards(), document.querySelector(".user"));
 });
 
-const dealButton = document.querySelector(".dealButton");
-dealButton.addEventListener("click", ()=> {
-  console.log("deal button clicked");
-  singleDeckGame.deal();
-}
-);
+const doubleButton = document.querySelector(".double");
+
+doubleButton.addEventListener("click" , () =>{
+  singleDeckGame.doubleUser();
+  document.querySelector(".user").innerHTML = "";
+  Dom.renderCards(singleDeckGame.getUserHand().getCards(), document.querySelector(".user"));
+  const userActions = querySelector(".actions");
+  const userActionsButtons = userActions.querySelectorAll("*"); 
+  userActionsButtons.forEach(button => button.setAttribute("disabled", "true"));
+});
