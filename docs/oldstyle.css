@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    --dark: #011;
+    --green: green;
+    --light: #efefef;
+    --red: red;
+  
+    color: var(--dark);
+    font: 20px/1 sans-serif;
+  }
+
+.command{
+    display: grid;
+    grid-area: command;
+    padding: 1rem;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    grid-area: footer;
+    grid-column:span 3;
+    align-items: center;
+    padding: 1rem;
+}
+
+.header{
+    display: grid;
+    justify-content: center;
+    color:black;
+    font-size: 2rem;
+    grid-area: header;
+    grid-column: span 3;
+    padding: 2rem;
+}
+
+.dealButton {
+    padding: 6px 4px 6px 10px;
+}
+
+.playing-card{
+    display: flex;
+    border-radius: 0.5rem;
+    background-color: var(--light);
+    padding: 1rem;
+    height: 8rem;
+    width: 6rem;
+    margin: 1rem;
+}
+
+.result {
+    display: flex;
+    grid-area: result;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table{
+    grid-area: table-Dealer, table-User;
+    background-color: var(--green);
+    height: 20rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--red);
+    padding: 1rem;
+    width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    background-image: url("Wood-Grain-2.jpg");
+    background-size: cover;
+    grid-template-columns: 15% 60% 15%;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header header" "command table-dealer result" "command table-user result" "footer footer footer";
+}
+
+
+
+
+button{
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid var(--red);
+    font-size: 1.5rem;
+    width: fit-content;  
+}
+
+button:hover {
+    background-color: yellow;
+}

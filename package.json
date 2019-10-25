@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "index.html",
+    "start": "webpack-dev-server --mode development --content-base docs/ --open --hot",
     "test": "jest --colors --watchAll"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^6.5.1",
     "jest": "^24.9.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/WeCanCodeIT/js-frontend#readme",
   "description": "",
   "dependencies": {
-    "blackjack-dealer-logic": "^1.1.4"
+    "blackjack-dealer-logic": "^1.1.4",
+    "playing-card-deck-generator": "^2.0.1"
   }
 }
