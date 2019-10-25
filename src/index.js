@@ -8,25 +8,35 @@ const Dom = require("./utils/Dom");
 const dealerHand = singleDeckGame.getDealerHand();
 const userHand = singleDeckGame.getUserHand();
 
-Dom.renderCards(dealerHand.getCards(), document.querySelector(".dealer"));
-Dom.renderCards(userHand.getCards(), document.querySelector(".user"));
+Dom.renderCards(dealerHand.getCards(), document.querySelector(".dealer-cards"));
+Dom.renderCards(userHand.getCards(), document.querySelector(".user-cards"));
 
-//button stuff
+//button stuff()
 const hitButton = document.querySelector(".hit");
 
 hitButton.addEventListener("click", () => {
   singleDeckGame.hitUser();
-  document.querySelector(".user").innerHTML = ""; //clears the exising cards
-  Dom.renderCards(singleDeckGame.getUserHand().getCards(), document.querySelector(".user"));
+  document.querySelector(".user-cards").innerHTML = ""; //clears the exising cards
+  Dom.renderCards(singleDeckGame.getUserHand().getCards(), document.querySelector(".user-cards"));
 });
 
 const doubleButton = document.querySelector(".double");
 
 doubleButton.addEventListener("click" , () =>{
   singleDeckGame.doubleUser();
-  document.querySelector(".user").innerHTML = "";
-  Dom.renderCards(singleDeckGame.getUserHand().getCards(), document.querySelector(".user"));
-  const userActions = querySelector(".actions");
-  const userActionsButtons = userActions.querySelectorAll("*"); 
-  userActionsButtons.forEach(button => button.setAttribute("disabled", "true"));
+  document.querySelector(".user-cards").innerHTML = "";
+  Dom.renderCards(singleDeckGame.getUserHand().getCards(), document.querySelector(".user-cards"));
+  
+  Dom.disableActionsButtons ();
+  singleDeckGame.settleDealerHand();
+  singleDeckGame.outcome();
+
+});
+
+const standButton = document.querySelector(".stand");
+standButton.addEventListener("click", () =>{
+  singleDeckGame.standUser();
+  Dom.disableActionsButtons ();
+
+
 });
