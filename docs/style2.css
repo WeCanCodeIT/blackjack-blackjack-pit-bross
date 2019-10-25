@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    background: rgb(195,100,24);
+background: radial-gradient(circle, rgba(195,100,24,1) 74%, rgba(238,180,106,1) 100%);
+}
+
+button {
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 2px solid var(--red);
+    font-size: 1.5rem;
+    width: fit-content
+}
+
+button:hover {
+    background-color: yellow;
+}
+
+html {
+    --dark: #011;
+    --green: green;
+    --light: #efefef;
+    --red: red;
+    color: var(--dark);
+    font: 20px/1 sans-serif;
+}
+
+.actions {
+    grid-area: actions;
+}
+
+.command {
+    grid-area: command;
+    padding: 1rem;
+}
+
+.dealer-cards {
+    grid-area: dealer-cards;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dealer-name {
+    grid-area: dealer-name;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+.footer {
+    grid-area: footer;
+    column-span: 3;
+}
+
+.header {
+    grid-area: header;
+    column-span: 3;
+    display: flex;
+    justify-content: center;
+    color: var(--dark);
+}
+
+.playing-card {
+    display: flex;
+    border-radius: .5rem;
+    background-color: var(--light);
+    padding: .3rem;
+    height: 5rem;
+    width: 3.75rem;
+    margin: .5rem;
+}
+.pot {
+    grid-area: pot;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+.result {
+    grid-area: result;
+}
+
+.user-cards {
+    grid-area: user-cards;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+.user-name {
+    grid-area: user-name;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
+
+.value-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--red);
+    padding: 1rem;
+    width: 100%;
+}
+
+.wrapper {
+    display: grid;
+    background-image: url("Wood-Grain-2.jpg");
+    background-size: cover;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 3rem 2rem 6rem 2rem 6rem 2rem 2rem 2rem;
+    grid-template-areas: "header header header" "command dealer-name result" "command dealer-cards result" "command pot result" "command user-cards result" "command user-name result" "command actions result" "footer footer footer";
+
+    
+    margin: 0 auto;
+    max-width: 50rem;
+    width: 90%;
+    
+    min-height: 100vh;
+}
