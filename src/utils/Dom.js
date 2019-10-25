@@ -29,9 +29,9 @@ module.exports = {
         });
     },
     
-    // disableActionsButtons () {
-    //     const userActions = document.querySelector(".actions");
-    //     const userActionsButtons = userActions.querySelectorAll("button");
-    //     userActionsButtons.forEach(button => button.setAttribute("disabled", "true"));
-    // }
+    disableActionsButtons () {
+        const userActions = document.querySelector(".actions");
+        const userActionsButtons = userActions.querySelectorAll("button");
+        userActionsButtons.forEach(button => button.setAttribute("disabled", "true"));
+    }
 };
