@@ -6,4 +6,4 @@ const {
 const Dom = require("./utils/Dom");
 
 Dom.setInitialAnte(singleDeckGame); 
-Dom.startGameLoop (singleDeckGame);
+Dom.startGameLoop (singleDeckGame, Result);

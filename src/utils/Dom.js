@@ -23,6 +23,8 @@ module.exports = {
 
   doubleEvent(singleDeckGame, Result) {
     singleDeckGame.doubleUser();
+    // we need to deal with the user chips
+    singleDeckGame.evaluateUser();
     document.querySelector(".user-cards").innerHTML = "";
     this.renderCards(
       singleDeckGame.getUserHand().getCards(),
@@ -65,7 +67,7 @@ module.exports = {
   standEvent(singleDeckGame, Result) {
     singleDeckGame.standUser();
     singleDeckGame.evaluateUser();
-
+    
     this.disableActionsButtons();
 
     singleDeckGame.settleDealerHand();
