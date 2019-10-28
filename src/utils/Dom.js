@@ -21,6 +21,20 @@ module.exports = {
     return playingCard;
   },
 
+  dealEvent(singleDeckGame, Result) {
+    singleDeckGame.resetPlayers();
+
+    document.querySelector(".user-cards").innerHTML = "";
+
+    document.querySelector(".dealer-cards").innerHTML = "";
+    
+    const userActions = document.querySelector(".actions");
+    const userActionsButtons = userActions.querySelectorAll("button");
+    userActionsButtons.forEach(button => button.removeAttribute("disabled"));
+
+    this.startGameLoop(singleDeckGame, Result);
+  },
+
   doubleEvent(singleDeckGame, Result) {
     singleDeckGame.doubleUser();
     // we need to deal with the user chips
@@ -118,6 +132,7 @@ module.exports = {
   },
 
   startGameLoop (singleDeckGame, Result) {
+    this.setInitialAnte(singleDeckGame);
     singleDeckGame.deal();
 
     const dealerHand = singleDeckGame.getDealerHand();
@@ -133,7 +148,6 @@ module.exports = {
     });
     
     const doubleButton = document.querySelector(".double");
-    
     doubleButton.addEventListener("click", () => {
       this.doubleEvent(singleDeckGame, Result);
     });
@@ -141,6 +155,11 @@ module.exports = {
     const standButton = document.querySelector(".stand");
     standButton.addEventListener("click", () => {
       this.standEvent(singleDeckGame, Result);
+    });
+
+    const dealHandButton = document.querySelector(".dealHand-btn");
+    dealHandButton.addEventListener("click", () => {
+      this.dealEvent(singleDeckGame, Result);
     });
   }
 };
