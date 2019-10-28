@@ -7,6 +7,3 @@ const Dom = require("./utils/Dom");
 
 Dom.setInitialAnte(singleDeckGame); 
 Dom.startGameLoop (singleDeckGame);
-
-
-

@@ -115,30 +115,30 @@ module.exports = {
     );
   },
 
-  startGameLoop (singleDeckGame) {
+  startGameLoop (singleDeckGame, Result) {
     singleDeckGame.deal();
 
     const dealerHand = singleDeckGame.getDealerHand();
     const userHand = singleDeckGame.getUserHand();
     
-    Dom.renderCards(dealerHand.getCards(), document.querySelector(".dealer-cards"));
-    Dom.renderCards(userHand.getCards(), document.querySelector(".user-cards"));
+    this.renderCards(dealerHand.getCards(), document.querySelector(".dealer-cards"));
+    this.renderCards(userHand.getCards(), document.querySelector(".user-cards"));
     
     //button stuff()
     const hitButton = document.querySelector(".hit");
     hitButton.addEventListener("click", () => {
-      Dom.hitEvent(singleDeckGame, Result);
+      this.hitEvent(singleDeckGame, Result);
     });
     
     const doubleButton = document.querySelector(".double");
     
     doubleButton.addEventListener("click", () => {
-      Dom.doubleEvent(singleDeckGame, Result);
+      this.doubleEvent(singleDeckGame, Result);
     });
     
     const standButton = document.querySelector(".stand");
     standButton.addEventListener("click", () => {
-      Dom.standEvent(singleDeckGame, Result);
+      this.standEvent(singleDeckGame, Result);
     });
   }
 };
